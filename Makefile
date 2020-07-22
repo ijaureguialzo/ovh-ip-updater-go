@@ -24,7 +24,7 @@ _build:
 update: _build start
 
 logs:
-	@docker-compose logs
+	@docker-compose logs ovh-ip-updater-go
 
 stats:
 	@docker stats
