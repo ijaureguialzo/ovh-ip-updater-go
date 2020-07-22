@@ -5,6 +5,12 @@ services:
     container_name: ovh-ip-updater-go
     image: sazap10/ovh-ip-updater-go
     build: .
+    environment:
+      - OVH_USERNAME=${OVH_USERNAME}
+      - OVH_PASSWORD=${OVH_PASSWORD}
+      - DOMAINS=${DOMAINS}
+      - SLEEP_DURATION=${SLEEP_DURATION}
+
   lint:
     build: 
       context: .

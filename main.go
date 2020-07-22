@@ -12,14 +12,9 @@ import (
 	"time"
 
 	"github.com/bugsnag/bugsnag-go"
-	"github.com/joho/godotenv"
 )
 
 func main() {
-	err := godotenv.Load()
-	if err != nil {
-		log.Println(".env not provided, using environment variables instead")
-	}
 	bugsnagAPIKey, ok := os.LookupEnv("BUGSNAG_API_KEY")
 	if ok {
 		bugsnag.Configure(bugsnag.Configuration{
