@@ -8,7 +8,7 @@ help:
 	@echo 'clean'
 
 start:
-	@docker-compose up -d --remove-orphans
+	@docker-compose up -d --remove-orphans ovh-ip-updater-go
 
 stop:
 	@docker-compose stop
