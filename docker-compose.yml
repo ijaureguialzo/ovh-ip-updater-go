@@ -10,6 +10,7 @@ services:
       - OVH_PASSWORD=${OVH_PASSWORD}
       - DOMAINS=${DOMAINS}
       - SLEEP_DURATION=${SLEEP_DURATION}
+    restart: unless-stopped
 
   lint:
     build: 
