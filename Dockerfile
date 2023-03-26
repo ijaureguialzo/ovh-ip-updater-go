@@ -1,8 +1,9 @@
+ARG GO_VERSION
+ARG ALPINE_VERSION
+
 ################################################################################
 # BUILDER/DEVELOPMENT IMAGE
 ################################################################################
-ARG GO_VERSION
-
 FROM golang:${GO_VERSION}-alpine as builder
 
 # Add git for downloading dependencies
@@ -22,8 +23,6 @@ RUN go build
 ################################################################################
 # FINAL IMAGE
 ################################################################################
-ARG ALPINE_VERSION
-
 FROM alpine:${ALPINE_VERSION}
 
 ENV BUILD_DIR=/build
