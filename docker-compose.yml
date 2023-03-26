@@ -13,4 +13,5 @@ services:
       - OVH_PASSWORD=${OVH_PASSWORD}
       - DOMAINS=${DOMAINS}
       - SLEEP_DURATION=${SLEEP_DURATION}
+      - TZ=Europe/Madrid
     restart: unless-stopped
