@@ -1,0 +1,9 @@
+# Versiones de software
+GO_VERSION=1.20
+ALPINE_VERSION=3.17
+
+# DNS dinámico en OVH
+OVH_USERNAME=username
+OVH_PASSWORD=password
+DOMAINS=example.com
+SLEEP_DURATION=3600
