@@ -3,7 +3,7 @@ package main
 import (
 	"errors"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"log"
 	"net/http"
 	"os"
@@ -11,7 +11,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/bugsnag/bugsnag-go"
+	"github.com/bugsnag/bugsnag-go/v2"
+	"github.com/joho/godotenv"
 )
 
 func main() {
@@ -19,7 +20,7 @@ func main() {
 	if ok {
 		bugsnag.Configure(bugsnag.Configuration{
 			APIKey:     bugsnagAPIKey,
-			AppVersion: "v1.1.3",
+			AppVersion: "v1.1.4",
 		})
 	}
 
@@ -78,7 +79,7 @@ func getIPAddress() (string, error) {
 		return "", fmt.Errorf("Unable to get IP Address, got code: %d", resp.StatusCode)
 	}
 
-	body, err := ioutil.ReadAll(resp.Body)
+	body, err := io.ReadAll(resp.Body)
 	if err != nil {
 		return "", errors.New("Unable to read api.ipify.org body")
 	}
@@ -99,7 +100,7 @@ func setDyndnsIPAddress(ipAddress string, domainName string, username string, pa
 		return err
 	}
 	defer resp.Body.Close()
-	body, err := ioutil.ReadAll(resp.Body)
+	body, err := io.ReadAll(resp.Body)
 	if err != nil {
 		return err
 	}
