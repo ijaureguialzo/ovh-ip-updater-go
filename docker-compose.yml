@@ -1,5 +1,3 @@
-version: '3.7'
-
 services:
   ovh-ip-updater-go:
     container_name: ovh-ip-updater-go
