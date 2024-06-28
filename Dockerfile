@@ -4,7 +4,7 @@ ARG ALPINE_VERSION
 ################################################################################
 # BUILDER/DEVELOPMENT IMAGE
 ################################################################################
-FROM golang:${GO_VERSION}-alpine as builder
+FROM golang:${GO_VERSION}-alpine AS builder
 
 # Add git for downloading dependencies
 RUN apk add --no-cache git gcc g++ libc-dev
