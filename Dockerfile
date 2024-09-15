@@ -1,5 +1,5 @@
-ARG GO_VERSION
-ARG ALPINE_VERSION
+ARG GO_VERSION=1.20
+ARG ALPINE_VERSION=3.17
 
 ################################################################################
 # BUILDER/DEVELOPMENT IMAGE
